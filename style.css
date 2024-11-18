@@ -1,0 +1,193 @@
+.copy-address-input {
+  width: 500px !important;
+}
+.copy-link-btn {
+  background-color: #a33ff9 !important;
+}
+.copy-link-btn:hover {
+  background-color: #6600c0 !important;
+}
+.copy-icon {
+  color: #a33ff9;
+}
+.icon-flip {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+.custom-btn-icons {
+  font-size: 1.1rem !important;
+}
+.app-sidebar .side-menu__icon {
+  font-size: 1.3rem;
+}
+.slide.has-sub {
+  margin-bottom: 15px;
+}
+.custom-button .custom-btn-icons {
+  margin-top: -1px;
+}
+.sidebar {
+  display: none !important;
+}
+.sidebar.active {
+  display: block !important;
+}
+.apexcharts-svg, .apexcharts-canvas {
+  width: fit-content !important;
+}
+.side-menu-icon{
+  width: 20px !important;
+  margin-right: 15px;
+}
+#sales-overview-crm{
+  overflow-x: auto;
+}
+.btn-group-table-dropdown{
+  width: 100%;
+}
+
+.snake-border {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 3px;
+  background: #fff; /* Card background */
+}
+
+.snake-border:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 1px !important; /* Reduced thickness for thinner border */
+  background: linear-gradient(
+    90deg,
+    rgb(255, 55, 55),
+    rgb(102, 255, 102),
+    rgb(91, 91, 255),
+    rgb(255, 48, 48)
+  );
+  background-size: 300% 300%; /* Enlarged for smooth animation */
+  z-index: 1;
+  animation: snake-animation 5s linear infinite;
+}
+
+.snake-border .card-body {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 8px; /* Slightly smaller than the border */
+  /* padding: 16px; */
+}
+
+@keyframes snake-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* table-data-dropdown Start */
+.select-menu{
+  width: 100%;
+}
+.select-menu .select-btn{
+  display: flex;
+  height: 40px;
+  background: #fff;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between !important;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.select-btn i{
+  font-size: 20px;
+  transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+  transform: rotate(-180deg);
+}
+.select-menu .options{
+  position: relative;
+  padding:0px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  display: none;
+}
+.select-menu.active .options{
+  display: block;
+}
+.options .option{
+  display: flex;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 28px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+.options .option:hover{
+  background: #F2F2F2;
+}
+.option i{
+  font-size: 25px;
+  margin-right: 12px;
+}
+.option .option-text{
+  font-size: 12px;
+  color: #333;
+}
+/* table-data-dropdown End */
+
+
+.btn-outline-primary {
+  position: relative;
+  overflow: hidden;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  border-color: rgba(0, 123, 255, 1); /* RGB equivalent of primary color */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8),
+              0 0 20px rgba(0, 123, 255, 0.6),
+              0 0 30px rgba(0, 123, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .btn-list {
+    margin-top: 15px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .page-header-breadcrumb .btn-list .btn {
+    width: fit-content;
+  }
+  .copy-address-input {
+    width: 100% !important;
+  }
+  .svg-incomegraph-main{
+    height: 300px !important;
+    width: 300px !important;
+  }
+  .css-1xmeye7-MuiResponsiveChart-container{
+    margin-left: 20px !important;
+    margin-bottom: 0px !important;
+  }
+}
+@media (max-width: 991px) {
+}
+
+
+
+
