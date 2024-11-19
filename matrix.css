@@ -35,5 +35,15 @@
   tr:last-child .indicator:before, tr:last-child .indicator:after{
     display:none;
   }
-
-  
+  .matrix-table-main-div{
+    box-shadow: 0 6px 16px 2px #0000000d;
+    border-radius: 10px;
+  }
+  .matrix-table-tbody tr td img{
+    height: 80px;
+  }
+@media (max-width:990px){
+  .matrix-table-main-div{
+    overflow-x: auto;
+  }
+}

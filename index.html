@@ -92,7 +92,7 @@
     />
   </head>
 
-  <body class="">
+  <body class="" data-theme-mode="light">
     <div id="alert-container"></div>
     <!-- Switcher -->
     <div
@@ -951,7 +951,7 @@
             <!-- End::header-element -->
 
             <!-- Start::header-element -->
-            <div class="header-element mx-lg-0 mx-2">
+            <div class="header-element mx-lg-0 mx-2" onclick="isCollapsed()" id="ic">
               <a
                 aria-label="Hide Sidebar"
                 class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle"
@@ -1003,11 +1003,15 @@
             <!-- End::header-element -->
 
             <!-- Start::header-element -->
+
+
+
+
+
+
             <li class="header-element header-theme-mode">
-              <!-- Start::header-link|layout-setting -->
               <a href="javascript:void(0);" class="header-link layout-setting">
-                <span class="light-layout">
-                  <!-- Start::header-link-icon -->
+                <span class="light-layout" style="display: block;">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6 header-link-icon"
@@ -1022,29 +1026,30 @@
                       d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
                     />
                   </svg>
-                  <!-- End::header-link-icon -->
                 </span>
-                <span class="dark-layout">
-                  <!-- Start::header-link-icon -->
+                <span class="dark-layout" style="display: none;">
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 header-link-icon"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                    />
-                  </svg>
-                  <!-- End::header-link-icon -->
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 header-link-icon"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                  />
+                </svg>
                 </span>
               </a>
-              <!-- End::header-link|layout-setting -->
             </li>
+
+
+
+
+
             <!-- End::header-element -->
 
             <!-- Start::header-element -->
@@ -1600,6 +1605,12 @@
                 </a>
               </li>
               <li class="slide has-sub">
+                <a href="form.html" class="side-menu__item">
+                  <i class="ri-survey-line side-menu__icon "></i>
+                  <span class="side-menu__label">Form</span>
+                </a>
+              </li>
+              <li class="slide has-sub">
                 <a href="profile.html" class="side-menu__item">
                   <i class="ri-profile-line side-menu__icon"></i>
                   <span class="side-menu__label">Profile</span>
@@ -1613,10 +1624,10 @@
               </li>
             </ul>
             <div
-              class="d-flex justify-content-center position-absolute w-100"
+              class="d-flex justify-content-center position-absolute w-100 logout-btn"
               style="bottom: 20px"
             >
-              <button class="btn btn-danger label-btn label-end rounded-pill">
+              <button class="btn btn-danger label-btn label-end rounded-pill logout-btn">
                 Logout
                 <i
                   class="ri-logout-box-line label-btn-icon ms-2 rounded-pill"
@@ -1644,7 +1655,7 @@
       <!-- End Main-Sidebar-->
 
       <!-- Start::app-content -->
-      <div class="main-content app-content">
+      <div class="main-content app-content" id="m-content">
         <div class="container-fluid">
           <!-- Start::page-header -->
           <div
@@ -2809,7 +2820,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card custom-card snake-border">
+              <!-- <div class="card custom-card snake-border">
                 <div class="card-body">
                   <div class="d-flex gap-2 align-items-center my-1">
                     <div>
@@ -2839,25 +2850,17 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- <div class="snake-border">
-                <div class="card-body">
-                  <span class="mb-1 d-block">Total Profit</span>
-                  <h4 class="mb-1">$37,566</h4>
-                  <div class="text-muted fs-13">
-                    <span class="">Increased By</span>
-                    <span class="badge bg-primary3 align-middle"
-                      >5.66%<i class="ti ti-arrow-narrow-up"></i
-                    ></span>
-                  </div>
-                </div>
               </div> -->
 
-              <!-- <div
-                class="card border border-primary2 border-opacity-25 custom-card"
+
+
+
+
+              <div
+                class="card custom-card wrapper"
               >
-                <div class="card-body">
-                  <div class="d-flex gap-2 align-items-center my-1">
+                <div class="card-body box ">
+                  <div class="d-flex gap-2 align-items-center my-1 ">
                     <div>
                       <span class="mb-1 d-block">Total Profit</span>
                       <h4 class="mb-1">$37,566</h4>
@@ -2885,7 +2888,7 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
             </div>
             <div class="col-md-12 col-xxl-6">
               <div class="card custom-card">
@@ -2902,7 +2905,7 @@
                     <div
                       id="apexcharts3nglvxyu"
                       class="apexcharts-canvas apexcharts3nglvxyu apexcharts-theme-light"
-                      style="width: 729px; height: 288px"
+                      style="width: 729px; height: 288px; margin: auto;"
                     >
                       <svg
                         id="SvgjsSvg2687"
@@ -4901,11 +4904,11 @@
                     <div
                       id="apexchartse1bd3ncmh"
                       class="apexcharts-canvas apexchartse1bd3ncmh apexcharts-theme-light"
-                      style="width: 368px; height: 327px"
+                      style="width: 368px; height: 327px; margin: auto;"
                     >
                       <svg
                         id="SvgjsSvg2816"
-                        width="368"
+                        width="300"
                         height="327"
                         xmlns="http://www.w3.org/2000/svg"
                         version="1.1"
@@ -4914,7 +4917,7 @@
                         class="apexcharts-svg"
                         xmlns:data="ApexChartsNS"
                         transform="translate(0, 0)"
-                        style="background: transparent"
+                        style="background: transparent ; margin-left: -58px;"
                       >
                         <foreignObject x="0" y="0" width="368" height="327"
                           ><div
@@ -6860,11 +6863,11 @@
                               </span> -->
                               <div class="flex-1 ms-2">
                                 <p class="mb-0 fs-14">Sophia Sara</p>
-                                <a
+                                <!-- <a
                                   href="javascript:void(0);"
                                   class="text-muted fs-12"
                                   >sophiasara@gmail.com</a
-                                >
+                                > -->
                               </div>
                             </div>
                           </td>
@@ -6932,11 +6935,7 @@
                             <div class="d-flex">
                               <div class="flex-1 ms-2">
                                 <p class="mb-0 fs-14">Simon Leo</p>
-                                <a
-                                  href="javascript:void(0);"
-                                  class="text-muted fs-12"
-                                  >simonleo@gmail.com</a
-                                >
+                               
                               </div>
                             </div>
                           </td>
@@ -6986,11 +6985,7 @@
                             <div class="d-flex">
                               <div class="flex-1 ms-2">
                                 <p class="mb-0 fs-14">Hadley Kylin</p>
-                                <a
-                                  href="javascript:void(0);"
-                                  class="text-muted fs-12"
-                                  >hadleykylin@gmail.com</a
-                                >
+                               
                               </div>
                             </div>
                           </td>
@@ -7040,11 +7035,7 @@
                             <div class="d-flex">
                               <div class="flex-1 ms-2">
                                 <p class="mb-0 fs-14">Isha Bella</p>
-                                <a
-                                  href="javascript:void(0);"
-                                  class="text-muted fs-12"
-                                  >ishabella@gmail.com</a
-                                >
+                                
                               </div>
                             </div>
                           </td>
@@ -7094,11 +7085,7 @@
                             <div class="d-flex">
                               <div class="flex-1 ms-2">
                                 <p class="mb-0 fs-14">Red Siddique</p>
-                                <a
-                                  href="javascript:void(0);"
-                                  class="text-muted fs-12"
-                                  >redsiddique@gmail.com</a
-                                >
+                                
                               </div>
                             </div>
                           </td>
@@ -7145,12 +7132,12 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <div class="d-flex align-items-center">
-                    <div>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <!-- <div>
                       Showing 5 Entries
                       <i class="bi bi-arrow-right ms-2 fw-semibold"></i>
-                    </div>
-                    <div class="ms-auto">
+                    </div> -->
+                    <div class="">
                       <nav
                         aria-label="Page navigation"
                         class="pagination-style-4"

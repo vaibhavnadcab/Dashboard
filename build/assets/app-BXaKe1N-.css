@@ -19416,6 +19416,21 @@ ul.analytics-activity li {
 [data-theme-mode="dark"] .layout-setting .dark-layout {
   display: block;
 }
+/* [data-theme-mode="light"] .layout-setting .dark-layout {
+  display: none !important;
+}
+[data-theme-mode="light"] .layout-setting .light-layout {
+  display: block !important;
+}
+[data-theme-mode="dark"] .layout-setting .light-layout {
+  display: none !important;
+}
+[data-theme-mode="dark"] .layout-setting .dark-layout {
+  display: block !important;
+} */
+
+
+
 @media (max-width: 767.98px) {
   .header-element.header-fullscreen {
     display: none;
