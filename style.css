@@ -32,27 +32,25 @@
 .sidebar.active {
   display: block !important;
 }
-.apexcharts-svg, .apexcharts-canvas {
+/* .apexcharts-svg, .apexcharts-canvas {
   width: fit-content !important;
-}
-.side-menu-icon{
+} */
+.side-menu-icon {
   width: 20px !important;
   margin-right: 15px;
 }
-#sales-overview-crm{
+/* #sales-overview-crm{
   overflow-x: auto;
-}
-.btn-group-table-dropdown{
+} */
+.btn-group-table-dropdown {
   width: 100%;
 }
-
-
 
 /* table-data-dropdown Start */
-.select-menu{
+.select-menu {
   width: 100%;
 }
-.select-menu .select-btn{
+.select-menu .select-btn {
   display: flex;
   height: 40px;
   background: #fff;
@@ -63,28 +61,28 @@
   align-items: center;
   cursor: pointer;
   justify-content: space-between !important;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.select-btn i{
+.select-btn i {
   font-size: 20px;
   transition: 0.3s;
 }
-.select-menu.active .select-btn i{
+.select-menu.active .select-btn i {
   transform: rotate(-180deg);
 }
-.select-menu .options{
+.select-menu .options {
   position: relative;
-  padding:0px;
+  padding: 0px;
   margin-top: 10px;
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   display: none;
 }
-.select-menu.active .options{
+.select-menu.active .options {
   display: block;
 }
-.options .option{
+.options .option {
   display: flex;
   height: 40px;
   cursor: pointer;
@@ -93,19 +91,18 @@
   align-items: center;
   background: #fff;
 }
-.options .option:hover{
-  background: #F2F2F2;
+.options .option:hover {
+  background: #f2f2f2;
 }
-.option i{
+.option i {
   font-size: 25px;
   margin-right: 12px;
 }
-.option .option-text{
+.option .option-text {
   font-size: 12px;
   color: #333;
 }
 /* table-data-dropdown End */
-
 
 .btn-outline-primary {
   position: relative;
@@ -115,9 +112,8 @@
 
 .btn-outline-primary:hover {
   border-color: rgba(0, 123, 255, 1); /* RGB equivalent of primary color */
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8),
-              0 0 20px rgba(0, 123, 255, 0.6),
-              0 0 30px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6),
+    0 0 30px rgba(0, 123, 255, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -132,109 +128,134 @@
   .copy-address-input {
     width: 100% !important;
   }
-  .svg-incomegraph-main{
+  .svg-incomegraph-main {
     height: 300px !important;
     width: 300px !important;
   }
-  .css-1xmeye7-MuiResponsiveChart-container{
+  .css-1xmeye7-MuiResponsiveChart-container {
     margin-left: 20px !important;
     margin-bottom: 0px !important;
   }
 }
 .app-sidebar .main-sidebar-header {
-  height: 4.20rem;
+  height: 4.2rem;
   border: none;
-}
-@media (max-width: 991px) {
-
 }
 
 #sidebar {
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out !important;
 }
 
 #m-content {
   transition: margin-left 0.3s ease-in-out;
 }
 
+.sales-card-body {
+  padding-bottom: 0px !important;
+}
 
-
-
-
-
-
-
+/* Snake animation for div */
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 90deg;
   inherits: true;
 }
 
 @property --gradX {
-  syntax: '<percentage>';
+  syntax: "<percentage>";
   initial-value: 50%;
   inherits: true;
 }
 
 @property --gradY {
-  syntax: '<percentage>';
+  syntax: "<percentage>";
   initial-value: 0%;
   inherits: true;
 }
 
-
-
 :root {
-	--d: 2500ms;
-	--angle: 90deg;
-	--gradX: 100%;
-	--gradY: 50%;
-	--c1: rgb(150, 95, 252);
-	--c2: rgb(2, 209, 255);
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgb(150, 95, 252);
+  --c2: rgb(2, 209, 255);
 }
 
 .wrapper {
-	min-width: min(40rem, 100%);
+  min-width: min(40rem, 100%);
 }
 
 .box {
-	font-size: 14px;
-	border: 0.35rem solid;
-	padding: 12px !important;
-	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
-	animation: borderRotate var(--d) linear infinite forwards;
+  font-size: 14px;
+  border: 0.35rem solid;
+  padding: 12px !important;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+  animation: borderRotate var(--d) linear infinite forwards;
 }
 
 .box:nth-child(2) {
-	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
-	animation: borderRadial var(--d) linear infinite forwards;
+  border-image: radial-gradient(
+      ellipse at var(--gradX) var(--gradY),
+      var(--c1),
+      var(--c1) 10%,
+      var(--c2) 40%
+    )
+    30;
+  animation: borderRadial var(--d) linear infinite forwards;
 }
 
 @keyframes borderRotate {
-	100% {
-		--angle: 420deg;
-	}
+  100% {
+    --angle: 420deg;
+  }
 }
 
 @keyframes borderRadial {
-	20% {
-		--gradX: 100%;
-		--gradY: 50%;
-	}
-	40% {
-		--gradX: 100%;
-		--gradY: 100%;
-	}
-	60% {
-		--gradX: 50%;
-		--gradY: 100%;
-	}
-	80% {
-		--gradX: 0%;
-		--gradY: 50%;
-	}
-	100% {
-		--gradX: 50%;
-		--gradY: 0%;
-	}
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+
+@media (max-width: 990px) {
+  #sidebar {
+    margin-top: 67px !important;
+    transition: transform 0.3s ease !important;
+  }
+  .t {
+    transform: translate(-15rem) !important;
+  }
+  .y {
+    transform: translate(0px) !important;
+  }
+  .m-content-filter{
+    filter: blur(5px);
+  }
+  .m-content-filter{
+    filter: none;
+  }
 }

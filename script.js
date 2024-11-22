@@ -23,8 +23,6 @@ function copyAddress() {
   }
 }
 
-
-
 // table dropdown on click open
 document.addEventListener("DOMContentLoaded", () => {
   const selectMenus = document.querySelectorAll(".select-menu");
@@ -49,9 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-// matrix mobile screen automatic center on 
+// matrix mobile screen automatic center on
 window.addEventListener("load", function () {
   const tableContainer = document.querySelector(".table-container");
   const table = document.querySelector("table");
@@ -82,19 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-// change theme day/Night 
+// change theme day/Night
 document.querySelector(".layout-setting").addEventListener("click", () => {
   const body = document.body;
   const currentTheme = body.getAttribute("data-theme-mode");
+  let income_bg = document.getElementById("tokenomics");
 
   if (currentTheme === "light") {
     body.setAttribute("data-theme-mode", "dark");
     localStorage.setItem("theme", "dark");
+    income_bg.style.backgroundColor = " rgb(25 25 28)";
   } else {
     body.setAttribute("data-theme-mode", "light");
     localStorage.setItem("theme", "light");
+    income_bg.style.backgroundColor = "#fff";
   }
 });
 
@@ -112,36 +109,38 @@ window.onload = () => {
   chantheme();
 };
 
-
-
-// sidebar open and close functionality on desktop screen
+// sidebar open and close functionality
 function isCollapsed() {
-  const d = document.getElementById("m-content");
   const side = document.getElementById("sidebar");
-  const subMenu = document.getElementsByClassName("side-menu__label");
-  const logout = document.getElementsByClassName("logout-btn");
+  if (window.innerWidth >= 992) {
+    const d = document.getElementById("m-content");
+    const subMenu = document.getElementsByClassName("side-menu__label");
+    const logout = document.getElementsByClassName("logout-btn");
 
-  if (d.style.marginLeft == "5rem") {
-    d.style.marginLeft = "15rem";
-    side.style.width = "15rem";
-    Array.from(logout).forEach((button) => {
-      button.style.display = "block";
-    });
-    const hiddenSubMenu = Array.from(subMenu).map((it) => {
-      it.style.display = "block";
-    });
-  } else if ((d.style.marginLeft = "15rem")) {
-    d.style.marginLeft = "5rem";
-    side.style.width = "5rem";
-    Array.from(logout).forEach((button) => {
-      button.style.display = "none";
-    });
-    const hiddenSubMenu = Array.from(subMenu).map((it) => {
-      it.style.display = "none";
-    });
-  }else if(window.innerWidth <= 990){
-    d.style.marginLeft = "0rem";
-    side.style.width = "0rem";
+    if (d.style.marginLeft == "5rem") {
+      d.style.marginLeft = "15rem";
+      side.style.width = "15rem";
+      Array.from(logout).forEach((button) => {
+        button.style.display = "block";
+      });
+      const hiddenSubMenu = Array.from(subMenu).map((it) => {
+        it.style.display = "block";
+      });
+    } else if ((d.style.marginLeft = "15rem")) {
+      d.style.marginLeft = "5rem";
+      side.style.width = "5rem";
+      Array.from(logout).forEach((button) => {
+        button.style.display = "none";
+      });
+      const hiddenSubMenu = Array.from(subMenu).map((it) => {
+        it.style.display = "none";
+      });
+    }
+  } else {
+    if (side.classList.contains("t")) {
+      side.classList.replace("t", "y");
+    } else if (side.classList.contains("y")) {
+      side.classList.replace("y", "t");
+    }
   }
 }
-

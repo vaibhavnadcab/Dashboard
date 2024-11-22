@@ -914,7 +914,11 @@
             <!-- End::header-element -->
 
             <!-- Start::header-element -->
-            <div class="header-element mx-lg-0 mx-2">
+            <div
+              class="header-element mx-lg-0 mx-2"
+              onclick="isCollapsed()"
+              id="ic"
+            >
               <a
                 aria-label="Hide Sidebar"
                 class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle"
@@ -1524,7 +1528,7 @@
       <!-- End Main-Sidebar-->
 
       <!-- Start::app-content -->
-      <div class="main-content app-content">
+      <div class="main-content app-content" id="m-content">
         <div class="container-fluid">
           <!-- Start::page-header -->
           <div
@@ -1569,140 +1573,377 @@
 
           <!-- Start::row-1 -->
           <div class="d-flex justify-content-center">
-            <div class="col-xl-9">
-                <div class="card custom-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            FORM WIZARD WITH VALIDATION
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="basicwizard">
-                            <ul class="nav nav-tabs nav-justified flex-md-row flex-column mb-4 tab-style-6 p-0" role="tablist">
-                                <li class="nav-item" data-target-form="#contactDetailForm" role="presentation">
-                                    <a class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1" data-bs-toggle="tab" data-toggle="tab" href="#contactDetail" aria-selected="false" role="tab" tabindex="-1"><span>Contact Detail</span></a>
-                                </li>
-                                <li class="nav-item" data-target-form="#jobDetailForm" role="presentation">
-                                    <a class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1" data-bs-toggle="tab" data-toggle="tab" href="#jobDetail" aria-selected="false" role="tab" tabindex="-1"><span>Job Detail</span></a>
-                                </li>
-                                <li class="nav-item" data-target-form="#educationDetailForm" role="presentation">
-                                    <a class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1" data-bs-toggle="tab" data-toggle="tab" href="#educationDetail" aria-selected="false" role="tab" tabindex="-1"><span>Education Detail</span></a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1 active" data-bs-toggle="tab" data-toggle="tab" href="#finish" aria-selected="true" role="tab"><span>Finish</span></a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane" id="contactDetail" role="tabpanel">
-                                    <form id="contactForm" class="needs-validation was-validated" novalidate="">
-                                        <div class="mb-3">
-                                            <label for="fullName2" class="form-label">Full Name:</label>
-                                            <input type="text" id="fullName2" name="fullName2" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="email2" class="form-label">Email:</label>
-                                            <input type="email" id="email2" name="email2" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="phoneNumber2" class="form-label">Phone Number:</label>
-                                            <input type="tel" id="phoneNumber2" name="phoneNumber2" class="form-control" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tab-pane" id="jobDetail" role="tabpanel">
-                                    <form id="jobForm" class="needs-validation was-validated" novalidate="">
-                                        <div class="mb-3">
-                                            <label for="jobTitle" class="form-label">Job Title:</label>
-                                            <input type="text" id="jobTitle" name="jobTitle" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="company" class="form-label">Company:</label>
-                                            <input type="text" id="company" name="company" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="location" class="form-label">Location:</label>
-                                            <input type="text" id="location" name="location" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="jobDescription" class="form-label">Job Description:</label>
-                                            <textarea id="jobDescription" name="jobDescription" class="form-control" rows="4" required=""></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tab-pane" id="educationDetail" role="tabpanel">
-                                    <form id="educationForm" class="needs-validation was-validated" novalidate="">
-                                        <div class="mb-3">
-                                            <label for="degree" class="form-label">Degree:</label>
-                                            <input type="text" id="degree" name="degree" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="institution" class="form-label">Institution:</label>
-                                            <input type="text" id="institution" name="institution" class="form-control" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="graduationYear" class="form-label">Graduation Year:</label>
-                                            <input type="number" id="graduationYear" name="graduationYear" class="form-control" min="1900" max="2100" required="">
-                                        </div>
-                                    
-                                        <div class="mb-3">
-                                            <label for="fieldOfStudy" class="form-label">Field of Study:</label>
-                                            <input type="text" id="fieldOfStudy" name="fieldOfStudy" class="form-control" required="">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tab-pane active show" id="finish" role="tabpanel">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-lg-10">
-                                            <div class="text-center p-4">
-                                                <span class="avatar avatar-xl avatar-rounded bg-success-transparent svg-success">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" opacity="0.2"></circle><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle></svg>
-                                                </span>
-                                                <h3 class="mt-2">Successful <span class="fs-14 align-middle">🎉</span></h3>
-                                                <p>Nulla facilisi. Praesent euismod, ex in viverra ullamcorper, augue justo convallis urna, a sollicitudin quam libero et magna. Sed ac metus.</p>
-                                                <div class="mb-0">
-                                                    <div class="form-check d-inline-block">
-                                                        <input class="form-check-input" id="customCheck1" required="" type="checkbox"> <label class="form-check-label" for="customCheck1">I agree with the <a class="fw-medium text-decoration-underline" href="https://laravelui.spruko.com/xintra/terms-conditions">Terms and Conditions.</a></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                    </div><!-- end row -->
-                                </div>
-                                <div class="d-flex wizard justify-content-between mt-3 flex-wrap gap-2">
-                                    <div class="first">
-                                        <a href="javascript:void(0);" class="btn btn-light">
-                                            First
-                                        </a>
-                                    </div>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <div class="previous me-2">
-                                            <a href="javascript:void(0);" class="btn icon-btn btn-primary table-icon">
-                                                <i class="bx bx-left-arrow-alt me-2 d-inline-block"></i>Back To Previous
-                                            </a>
-                                        </div>
-                                        <div class="next">
-                                            <a href="javascript:void(0);" class="btn icon-btn btn-secondary flex-wrap table-icon disabled">
-                                                Next Step<i class="bx bx-right-arrow-alt d-inline-block ms-2"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="last">
-                                        <a href="javascript:void(0);" class="btn btn-success flex-wrap disabled">
-                                            Finish
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-xl-10">
+              <div class="card custom-card">
+                <div class="card-header">
+                  <div class="card-title">FORM WIZARD WITH VALIDATION</div>
                 </div>
+                <div class="card-body">
+                  <div id="basicwizard">
+                    <ul
+                      class="nav nav-tabs nav-justified flex-md-row flex-column mb-4 tab-style-6 p-0"
+                      role="tablist"
+                    >
+                      <li
+                        class="nav-item"
+                        data-target-form="#contactDetailForm"
+                        role="presentation"
+                      >
+                        <a
+                          class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1 active"
+                          data-bs-toggle="tab"
+                          data-toggle="tab"
+                          href="#contactDetail"
+                          aria-selected="true"
+                          role="tab"
+                          ><span>Contact Detail</span></a
+                        >
+                      </li>
+                      <li
+                        class="nav-item"
+                        data-target-form="#jobDetailForm"
+                        role="presentation"
+                      >
+                        <a
+                          class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1"
+                          data-bs-toggle="tab"
+                          data-toggle="tab"
+                          href="#jobDetail"
+                          aria-selected="false"
+                          tabindex="-1"
+                          role="tab"
+                          ><span>Job Detail</span></a
+                        >
+                      </li>
+                      <li
+                        class="nav-item"
+                        data-target-form="#educationDetailForm"
+                        role="presentation"
+                      >
+                        <a
+                          class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1"
+                          data-bs-toggle="tab"
+                          data-toggle="tab"
+                          href="#educationDetail"
+                          aria-selected="false"
+                          tabindex="-1"
+                          role="tab"
+                          ><span>Education Detail</span></a
+                        >
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a
+                          class="nav-link icon-btn d-flex align-items-center justify-content-md-center gap-1"
+                          data-bs-toggle="tab"
+                          data-toggle="tab"
+                          href="#finish"
+                          aria-selected="false"
+                          tabindex="-1"
+                          role="tab"
+                          ><span>Finish</span></a
+                        >
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div
+                        class="tab-pane show active"
+                        id="contactDetail"
+                        role="tabpanel"
+                      >
+                        <form
+                          id="contactForm"
+                          class="needs-validation"
+                          novalidate=""
+                        >
+                          <div class="mb-3">
+                            <label for="fullName2" class="form-label"
+                              >Full Name:</label
+                            >
+                            <input
+                              type="text"
+                              id="fullName2"
+                              name="fullName2"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="email2" class="form-label"
+                              >Email:</label
+                            >
+                            <input
+                              type="email"
+                              id="email2"
+                              name="email2"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="phoneNumber2" class="form-label"
+                              >Phone Number:</label
+                            >
+                            <input
+                              type="tel"
+                              id="phoneNumber2"
+                              name="phoneNumber2"
+                              class="form-control"
+                              pattern="[0-9]{10}"
+                              placeholder="Enter 10-digit phone number"
+                            />
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane" id="jobDetail" role="tabpanel">
+                        <form
+                          id="jobForm"
+                          class="needs-validation"
+                          novalidate=""
+                        >
+                          <div class="mb-3">
+                            <label for="jobTitle" class="form-label"
+                              >Job Title:</label
+                            >
+                            <input
+                              type="text"
+                              id="jobTitle"
+                              name="jobTitle"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="company" class="form-label"
+                              >Company:</label
+                            >
+                            <input
+                              type="text"
+                              id="company"
+                              name="company"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="location" class="form-label"
+                              >Location:</label
+                            >
+                            <input
+                              type="text"
+                              id="location"
+                              name="location"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="jobDescription" class="form-label"
+                              >Job Description:</label
+                            >
+                            <textarea
+                              id="jobDescription"
+                              name="jobDescription"
+                              class="form-control"
+                              rows="4"
+                              required=""
+                            ></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div
+                        class="tab-pane"
+                        id="educationDetail"
+                        role="tabpanel"
+                      >
+                        <form
+                          id="educationForm"
+                          class="needs-validation"
+                          novalidate=""
+                        >
+                          <div class="mb-3">
+                            <label for="degree" class="form-label"
+                              >Degree:</label
+                            >
+                            <input
+                              type="text"
+                              id="degree"
+                              name="degree"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="institution" class="form-label"
+                              >Institution:</label
+                            >
+                            <input
+                              type="text"
+                              id="institution"
+                              name="institution"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="graduationYear" class="form-label"
+                              >Graduation Year:</label
+                            >
+                            <input
+                              type="number"
+                              id="graduationYear"
+                              name="graduationYear"
+                              class="form-control"
+                              min="1900"
+                              max="2100"
+                              required=""
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="fieldOfStudy" class="form-label"
+                              >Field of Study:</label
+                            >
+                            <input
+                              type="text"
+                              id="fieldOfStudy"
+                              name="fieldOfStudy"
+                              class="form-control"
+                              required=""
+                            />
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane" id="finish" role="tabpanel">
+                        <div class="row d-flex justify-content-center">
+                          <div class="col-lg-10">
+                            <div class="text-center p-4">
+                              <span
+                                class="avatar avatar-xl avatar-rounded bg-success-transparent svg-success"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 256 256"
+                                >
+                                  <rect
+                                    width="256"
+                                    height="256"
+                                    fill="none"
+                                  ></rect>
+                                  <circle
+                                    cx="128"
+                                    cy="128"
+                                    r="96"
+                                    opacity="0.2"
+                                  ></circle>
+                                  <polyline
+                                    points="88 136 112 160 168 104"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                  ></polyline>
+                                  <circle
+                                    cx="128"
+                                    cy="128"
+                                    r="96"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                  ></circle>
+                                </svg>
+                              </span>
+                              <h3 class="mt-2">
+                                Successful
+                                <span class="fs-14 align-middle">🎉</span>
+                              </h3>
+                              <p>
+                                Nulla facilisi. Praesent euismod, ex in viverra
+                                ullamcorper, augue justo convallis urna, a
+                                sollicitudin quam libero et magna. Sed ac metus.
+                              </p>
+                              <div class="mb-0">
+                                <div class="form-check d-inline-block">
+                                  <input
+                                    class="form-check-input"
+                                    id="customCheck1"
+                                    required=""
+                                    type="checkbox"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="customCheck1"
+                                    >I agree with the
+                                    <a
+                                      class="fw-medium text-decoration-underline"
+                                      href="https://laravelui.spruko.com/xintra/terms-conditions"
+                                      >Terms and Conditions.</a
+                                    ></label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                      </div>
+                      <div
+                        class="d-flex wizard justify-content-between mt-3 flex-wrap gap-2"
+                      >
+                        <div class="first">
+                          <a
+                            href="javascript:void(0);"
+                            class="btn btn-light disabled"
+                          >
+                            First
+                          </a>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                          <div class="previous me-2">
+                            <a
+                              href="javascript:void(0);"
+                              class="btn icon-btn btn-primary table-icon disabled"
+                            >
+                              <i
+                                class="bx bx-left-arrow-alt me-2 d-inline-block"
+                              ></i
+                              >Back To Previous
+                            </a>
+                          </div>
+                          <div class="next">
+                            <a
+                              href="javascript:void(0);"
+                              class="btn icon-btn btn-secondary flex-wrap table-icon"
+                            >
+                              Next Step<i
+                                class="bx bx-right-arrow-alt d-inline-block ms-2"
+                              ></i>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="last">
+                          <a
+                            href="javascript:void(0);"
+                            class="btn btn-success flex-wrap"
+                          >
+                            Finish
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- End::row-1 -->

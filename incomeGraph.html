@@ -915,7 +915,11 @@
             <!-- End::header-element -->
 
             <!-- Start::header-element -->
-            <div class="header-element mx-lg-0 mx-2">
+            <div
+              class="header-element mx-lg-0 mx-2"
+              onclick="isCollapsed()"
+              id="ic"
+            >
               <a
                 aria-label="Hide Sidebar"
                 class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle"
@@ -1384,7 +1388,7 @@
       <!-- End Main-Header -->
 
       <!--Main-Sidebar-->
-      <aside class="app-sidebar sticky" id="sidebar">
+      <aside class="app-sidebar sticky t" id="sidebar">
         <!-- Start::main-sidebar-header -->
         <div class="main-sidebar-header">
           <a href="index.html" class="header-logo">
@@ -1494,10 +1498,12 @@
               </li>
             </ul>
             <div
-              class="d-flex justify-content-center position-absolute w-100"
+              class="d-flex justify-content-center position-absolute w-100 logout-btn"
               style="bottom: 20px"
             >
-              <button class="btn btn-danger label-btn label-end rounded-pill">
+              <button
+                class="btn btn-danger label-btn label-end rounded-pill logout-btn"
+              >
                 Logout
                 <i
                   class="ri-logout-box-line label-btn-icon ms-2 rounded-pill"
@@ -1525,7 +1531,7 @@
       <!-- End Main-Sidebar-->
 
       <!-- Start::app-content -->
-      <div class="main-content app-content">
+      <div class="main-content app-content" id="m-content">
         <div class="container-fluid">
           <!-- Start::page-header -->
           <div
