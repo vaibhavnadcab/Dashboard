@@ -87,7 +87,7 @@ document.querySelector(".layout-setting").addEventListener("click", () => {
   if (currentTheme === "light") {
     body.setAttribute("data-theme-mode", "dark");
     localStorage.setItem("theme", "dark");
-    income_bg.style.backgroundColor = " rgb(25 25 28)";
+    income_bg.style.backgroundColor = " ";
   } else {
     body.setAttribute("data-theme-mode", "light");
     localStorage.setItem("theme", "light");
